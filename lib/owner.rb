@@ -1,3 +1,5 @@
+require 'pry'
+
 class Owner
   # code goes here
 attr_reader :name , :species
@@ -22,4 +24,25 @@ attr_reader :name , :species
   def self.reset_all
     @@all.clear
   end
+  
+  def cats
+    ownersCat = []
+    Cat.all.each do |eachCat|
+      if eachCat.owner.name == self.name
+        ownersCat << eachCat
+      end
+    end
+  return ownersCat
+  end 
+  
+  def dogs
+    ownersDog = []
+    Dog.all.each do |eachDog|
+      if eachDog.owner.name == self.name
+ 
+        ownersDog << eachDog
+      end
+    end
+  return ownersDog
+  end 
 end
