@@ -37,12 +37,6 @@ attr_reader :name , :species
   
   def dogs
     ownersDog = []
-    Dog.all.each do |eachDog|
-      if eachDog.owner.name == self.name
- 
-        ownersDog << eachDog
-      end
-    end
-  return ownersDog
+Dog.all.select{|dog| dog.owner == self}
   end 
 end
