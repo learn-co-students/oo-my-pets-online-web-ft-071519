@@ -56,6 +56,9 @@ attr_reader :name , :species
   
   def walk_dogs
     self.dogs.map {|d| d.mood = "happy"}
-    
+  end
+  
+  def feed_cats
+    self.cats.map {|d| d.mood = "happy"}
   end
 end
