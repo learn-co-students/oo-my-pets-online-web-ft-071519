@@ -28,7 +28,7 @@ attr_reader :name , :species
   def cats
     ownersCat = []
     Cat.all.each do |eachCat|
-      if eachCat.owner.name == self.name
+      if eachCat.owner == self
         ownersCat << eachCat
       end
     end
@@ -47,8 +47,10 @@ attr_reader :name , :species
   end 
   
   def buy_cat(catName)
-    binding.pry
-      newCat = Cat.new(catName,self)
-      
+   newCat = Cat.new(catName,self)
+  end
+  
+  def buy_dog(dogName)
+   newDog = Dog.new(dogName,self)
   end
 end
