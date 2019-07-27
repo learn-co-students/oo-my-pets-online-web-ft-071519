@@ -37,6 +37,18 @@ attr_reader :name , :species
   
   def dogs
     ownersDog = []
-Dog.all.select{|dog| dog.owner == self}
+    Dog.all.each do |eachDog|
+      if eachDog.owner == self
+ 
+        ownersDog << eachDog
+      end
+    end
+  return ownersDog
   end 
+  
+  def buy_cat(catName)
+    binding.pry
+      newCat = Cat.new(catName,self)
+      
+  end
 end
