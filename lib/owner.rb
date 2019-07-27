@@ -63,8 +63,14 @@ attr_reader :name , :species
   end
   
   def sell_pets
-    self.cats.map {|d| d.mood = "nervous"}
-    self.dogs.map {|d| d.mood = "nervous"}
+    self.cats.map do|d| 
+      d.mood = "nervous"
+      d.owner = nil
+    end
+    self.dogs.map do|d| 
+      d.mood = "nervous"
+      d.owner = nil
+    end
 
   end
 end
