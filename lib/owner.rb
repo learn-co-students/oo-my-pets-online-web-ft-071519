@@ -47,6 +47,7 @@ attr_reader :name , :species
   end 
   
   def buy_cat(catName)
+
    newCat = Cat.new(catName,self)
   end
   
@@ -57,8 +58,13 @@ attr_reader :name , :species
   def walk_dogs
     self.dogs.map {|d| d.mood = "happy"}
   end
-  
   def feed_cats
     self.cats.map {|d| d.mood = "happy"}
+  end
+  
+  def sell_pets
+    self.cats.map {|d| d.mood = "nervous"}
+    self.dogs.map {|d| d.mood = "nervous"}
+
   end
 end
