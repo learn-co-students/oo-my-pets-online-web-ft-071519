@@ -55,7 +55,7 @@ attr_reader :name , :species
   end
   
   def walk_dogs
-    self
-    binding.bry
+    self.dogs.map {|d| d.mood = "happy"}
+    
   end
 end
