@@ -53,4 +53,9 @@ attr_reader :name , :species
   def buy_dog(dogName)
    newDog = Dog.new(dogName,self)
   end
+  
+  def walk_dogs
+    self
+    binding.bry
+  end
 end
