@@ -2,12 +2,15 @@ class Owner
  attr_reader :name
   @@all = []
   
+  
   @@pets = { cats: [], dogs: []}
   
+
   def initialize(name)
     @name = name
     @@all << self 
   end 
+  
   def species
     @species = "human"
   end 
@@ -20,11 +23,11 @@ class Owner
     @@all
   end 
   
-  def self.count 
-    all.count
+  def self.count
+    all.count 
   end 
   def self.reset_all
-    self.all.clear
+    all.clear
   end 
   
   def cats 
@@ -32,27 +35,28 @@ class Owner
       cat.owner == self 
     end 
   end 
-    
   def dogs
     Dog.all.select do |dog|
-      dog.owner == self 
+      dog.owner  == self 
     end 
   end 
   
   def buy_cat(cat)
-   Cat.new(cat, self)
+    Cat.new(cat,self)
   end 
   
   def buy_dog(dog)
-    Dog.new(dog, self)
+    Dog.new(dog,self)
   end 
   
   def walk_dogs
-    dogs.each { |dog| dog.mood = "happy"}
+    dogs.each {|dog| dog.mood = "happy"}
   end 
-  def feed_cats 
+  
+  def feed_cats
     cats.each {|cat| cat.mood = "happy"}
-  end 
+  end
+  
   def sell_pets
     pets = dogs + cats
     pets.each do |pet| 
@@ -61,8 +65,9 @@ class Owner
     end 
   end 
   
-  def list_pets 
+  def list_pets
     "I have #{dogs.count} dog(s), and #{cats.count} cat(s)."
   end 
+
   
 end
